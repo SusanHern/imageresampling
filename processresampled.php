@@ -19,8 +19,8 @@ $fadx = 'res' . $filesx;
 echo "<img src='$fadx' /></br>";
 echo "<img src='$filesx' /><br>";
 } else { 
-if (is_dir($dir)) {
-    if ($dh = opendir($dir)) {
+if (is_dir($filesx)) {
+    if ($dh = opendir($filesx)) {
         while (($file = readdir($dh)) !== false) { 
         
         if (substr($file, -4) == ".jpg") { 
