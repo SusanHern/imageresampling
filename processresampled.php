@@ -23,7 +23,7 @@ if (is_dir($filesx)) {
     if ($dh = opendir($filesx)) {
         while (($file = readdir($dh)) !== false) { 
         
-        if (substr($file, -4) == ".jpg") { 
+        if (substr($file, -4) == ".jpg" || substr($file, -4) == ".png") { 
         $filearray[] = $file;
         
             echo " " . $file . "</br>";
@@ -39,7 +39,11 @@ $quality = $quality;
 $width = $size;
 $height = $size;
 resize($start, $en, $quality, $width, $height);
-$fadx = 'res' . $fa;
+$cx = substr($fa, 0, -4);
+$dx = substr($fa, -4);
+$fadx = $cx . 'res' . $dx;
+echo "$fadx<br />";
+
 echo "<img src='$fadx' /></br>";
 echo "<img src='$fa' /><br>";
 } } 
